@@ -33,7 +33,7 @@ db.create_new_user_db()
 os.chdir('DB')
 sec = Security.Security()
 auth_flag = False
-secret_key = ''
+secret_key = b''
 while True:
     main_menu()
     main_menu_choice = Checker.Checker().menu_choice_check()
