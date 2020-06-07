@@ -25,8 +25,8 @@ class Data:
         with open(os.path.abspath(user) + '/USER_INFO/password.txt', 'r') as file:
             user_password = file.read()
         if Checker.Checker().check_password(user_password, password):
-            with open(os.path.abspath(user) + '/USER_INFO/enc_key.txt', 'rb') as file:
-                self.__user_secret_key = file.read()
+            with open(os.path.abspath(user) + '/USER_INFO/enc_key.txt', 'rb') as byte_enc_key_file:
+                self.__user_secret_key = byte_enc_key_file.read()
             return True
         else:
             print('Неверные данные!')
@@ -50,10 +50,10 @@ class Data:
             os.mkdir('USER_INFO')
             os.mkdir('NOTES')
             os.chdir(home_path)
-            with open(os.path.abspath(user) + '/USER_INFO/login.txt', 'wb') as file:
-                file.write(hashed_user)
-            with open(os.path.abspath(user) + '/USER_INFO/password.txt', 'w') as file:
-                file.write(password)
+            with open(os.path.abspath(user) + '/USER_INFO/login.txt', 'wb') as byte_login_file:
+                byte_login_file.write(hashed_user)
+            with open(os.path.abspath(user) + '/USER_INFO/password.txt', 'w') as password_file:
+                password_file.write(password)
             with open(os.path.abspath(user) + '/USER_INFO/enc_key.txt', 'wb') as file:
                 file.write(enc_key)
         print('Создание аккаунта прошло успешно!')
