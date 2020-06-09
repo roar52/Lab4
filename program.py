@@ -6,26 +6,29 @@ import Notes
 import Security
 
 
-def main_menu():
+def main_menu() -> None:
     print('1-Войти в аккаунт')
     print('2-Зарегестрироваться')
     print('3-Выход')
+    return None
 
 
-def account_edit():
+def account_edit() -> None:
     print('1-Работа с заметками')
     print('2-Изменить пароль')
     print('3-Удалить аккаунт')
     print('4-Выход в главное меню')
+    return None
 
 
-def notes_menu():
+def notes_menu() -> None:
     print('1-Добавить заметку')
     print('2-Получить содержимое заметки заметку')
     print('3-Обновить заметку')
     print('4-Удалить заметку')
     print('5-Количество заметок')
     print('6-Выход в меню управления аккаунтом')
+    return None
 
 
 db = Data.Data()
